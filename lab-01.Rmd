@@ -177,11 +177,8 @@ visitors %>%
 _Perform the same calculation for the 2021 admissions data._
 
 ```{r Ex_h}
-#visitors %>% 
-#  ______(
-#    __________,
-#    __________
-#  )
+visitors %>% 
+  summarise(mean_2021 = mean(n_2021), med_2021 = median(n_2021))
 ```
 
 All values in the output are `NA`!
@@ -190,8 +187,7 @@ All values in the output are `NA`!
 
 _What does `NA` stand for and why are you getting this as your answer to the previous question._
 
-**Write your answer here**
-
+NA stands for not available, appears in the answer to the previous question because certain values in the n_2021 column are not available and appear as NA in the table column, so a mean or median cannot be calculated and the only response is NA
 
 
 
@@ -199,7 +195,13 @@ _What does `NA` stand for and why are you getting this as your answer to the pre
 
 _Look at the help pages for the `mean()` and `median()` commands to see what the input argument `na.rm` does. Edit your code from exercise h so that it computes the summary statistics where data is available._
 
-**Write your answer here**
+```{r Ex_j}
+visitors %>% 
+  summarise(mean_2021 = mean(n_2021, na.rm = TRUE), med_2021 = median(n_2021, na.rm = TRUE))
+```
+
+na.rm according to the mean help page: a logical evaluating to TRUE or FALSE indicating whether NA values should be stripped before the computation proceeds.
+na.rm is a way of removing NA values from the calculation of the mean and median responding to TRUE or FAlSE, true => remove and false => not remove
 
 
 
