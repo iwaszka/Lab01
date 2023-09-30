@@ -223,7 +223,7 @@ visitors %>%
 
 _Observe in question 6 that the mean statistics across all settings are much larger than the corresponding median statistics. Discuss in your group what this suggests about the data._
 
-**Write your answer here**
+The difference stems from the mean being calculated using all of the available values, so any extremely high values skew the calculation of the mean causing it to be extremely high. This means that there are a number of attractions that experience numbers of visitors that are significantly larger than the rest of the attractions 
 
 
 
@@ -256,8 +256,10 @@ _How many tourist attractions are there in each of the 4 nations? From this, dis
 
 
 ```{r Ex_l}
-#________ %>%
-#  ______(_______)
+visitors_with_nations %>% 
+  group_by(nation) %>%
+  count(nation)
+  
 ```
 
 
@@ -269,8 +271,9 @@ _How many tourist attractions are there in each of the 4 nations? From this, dis
 _Within each of the 4 nations, what is the proportion of tourist attractions that have free admission for all visitors?_
 
 ```{r Ex_m}
-# Write your code here
-
+visitors_with_nations %>%
+  
+  
 
 ```
 
